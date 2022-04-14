@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AuthController: UIViewController {
+class AuthViewController: UIViewController {
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -50,7 +50,7 @@ class AuthController: UIViewController {
         button.setTitle("SignUP", for: .normal)
         button.tintColor = .white
         button.layer.cornerRadius = 10
-        button.addTarget(AuthController.self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -61,7 +61,7 @@ class AuthController: UIViewController {
         button.setTitle("SignIN", for: .normal)
         button.tintColor = .white
         button.layer.cornerRadius = 10
-        button.addTarget(AuthController.self, action: #selector(signInButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -74,7 +74,7 @@ class AuthController: UIViewController {
         
         setupViews()
         setupDelegate()
-        setConstarins()
+        setConstraints()
     }
     
     private func setupViews() {
@@ -92,7 +92,7 @@ class AuthController: UIViewController {
                                           distribution: .fillEqually)
         
         view.addSubview(scrollView)
-        view.addSubview(backgrounbView)
+        scrollView.addSubview(backgrounbView)
         backgrounbView.addSubview(textFieldsStackView)
         backgrounbView.addSubview(loginLable)
         backgrounbView.addSubview(buttonsStackView)
@@ -119,7 +119,7 @@ class AuthController: UIViewController {
 
 //MARK: - UITextFieldDelegate
 
-extension AuthController: UITextFieldDelegate {
+extension AuthViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         emailTextFild.resignFirstResponder()
@@ -130,9 +130,9 @@ extension AuthController: UITextFieldDelegate {
 
 //MARK: - Set Constarins
 
-extension AuthController {
+extension AuthViewController {
     
-    private func setConstarins() {
+    private func setConstraints() {
         
         NSLayoutConstraint.activate([
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
@@ -170,5 +170,6 @@ extension AuthController {
             buttonsStackView.topAnchor.constraint(equalTo: backgrounbView.bottomAnchor, constant: 30),
             buttonsStackView.trailingAnchor.constraint(equalTo: backgrounbView.trailingAnchor, constant: -20),
         ])
+                
     }
 }

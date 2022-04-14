@@ -5,18 +5,17 @@
 //  Created by Николай Петров on 14.04.2022.
 //
 
-import Foundation
+import UIKit
 
-
-//extension SignUpViewController {
-//    convenience init(arrangedSubviews: [UIView],
-//                                     axis: NSLayoutConstraint.Axis,
-//                                     spacing: CGFloat,
-//                                     distribution: UIStackView.Distribution) {
-//        self.init(arrangedSubviews: arrangedSubviews)
-//        self.axis = axis
-//        self.spacing = spacing
-//        self.distribution = distribution
-//        self.translatesAutoresizingMaskIntoConstraints = false
-//    }
-//}
+extension UIViewController {
+    
+    func createCustomButton(selector: Selector) -> UIBarButtonItem {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "person.fill"), for: .normal)
+        button.tintColor = .black
+        button.addTarget(self, action: selector, for: .touchUpInside)
+        
+        let menuBarItem = UIBarButtonItem(customView: button)
+        return menuBarItem
+    }
+}

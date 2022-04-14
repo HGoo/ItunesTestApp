@@ -122,7 +122,7 @@ class SignUpViewController: UIViewController {
         button.setTitle("SignUP", for: .normal)
         button.tintColor = .white
         button.layer.cornerRadius = 10
-        button.addTarget(SignUpViewController.self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -135,7 +135,7 @@ class SignUpViewController: UIViewController {
         
         setupViews()
         setupDelegate()
-        setConstarins()
+        setConstraints()
         setDatePicker()
     }
     
@@ -209,7 +209,7 @@ extension SignUpViewController: UITextFieldDelegate {
 
 extension SignUpViewController {
     
-    private func setConstarins() {
+    private func setConstraints() {
         
         NSLayoutConstraint.activate([
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
@@ -243,6 +243,6 @@ extension SignUpViewController {
             signUpButton.heightAnchor.constraint(equalToConstant: 40),
             signUpButton.widthAnchor.constraint(equalToConstant: 300)
         ])
-       
+        
     }
 }
