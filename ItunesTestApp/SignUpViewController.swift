@@ -83,11 +83,10 @@ class SignUpViewController: UIViewController {
         return label
     }()
     
-    private let emailNumberTextField: UITextField = {
+    private let emailTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.placeholder = "E-mail"
-        textField.keyboardType = .numberPad
         return textField
     }()
     
