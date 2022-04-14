@@ -113,9 +113,7 @@ class AuthViewController: UIViewController {
         navVC.modalPresentationStyle = .fullScreen
         self.present(navVC, animated: true)
     }
-
 }
-
 
 //MARK: - UITextFieldDelegate
 
@@ -144,8 +142,8 @@ extension AuthViewController {
         NSLayoutConstraint.activate([
             backgrounbView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             backgrounbView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
-            backgrounbView.heightAnchor.constraint(equalTo: scrollView.heightAnchor),
-            backgrounbView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+            backgrounbView.heightAnchor.constraint(equalTo: view.heightAnchor),
+            backgrounbView.widthAnchor.constraint(equalTo: view.widthAnchor)
         ])
         
         NSLayoutConstraint.activate([
