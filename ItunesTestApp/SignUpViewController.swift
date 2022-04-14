@@ -5,7 +5,6 @@
 //  Created by Николай Петров on 14.04.2022.
 //
 
-import Foundation
 import UIKit
 
 class SignUpViewController: UIViewController {
