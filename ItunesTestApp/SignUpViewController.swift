@@ -126,14 +126,14 @@ class SignUpViewController: UIViewController {
     }()
     
     private var elementsStackView = UIStackView()
-    private var datePicker = UIDatePicker()
+    private let datePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
-        setupDelegate()
         setConstraints()
+        setupDelegate()
         setDatePicker()
     }
     
