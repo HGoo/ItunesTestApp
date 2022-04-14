@@ -156,7 +156,7 @@ class SignUpViewController: UIViewController {
                                         spacing: 10,
                                         distribution: .fillProportionally)
         view.addSubview(scrollView)
-        view.addSubview(backgroundView)
+        scrollView.addSubview(backgroundView)
         backgroundView.addSubview(elementsStackView)
         backgroundView.addSubview(loginLabel)
         backgroundView.addSubview(signUpButton)
