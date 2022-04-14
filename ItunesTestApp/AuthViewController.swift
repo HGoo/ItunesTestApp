@@ -15,14 +15,14 @@ class AuthViewController: UIViewController {
         return scrollView
     }()
     
-    private let backgrounbView: UIView = {
+    private let backgroundView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private let loginLable: UILabel = {
+    private let loginLabel: UILabel = {
         let lable = UILabel()
         lable.text = "LogIn"
         lable.translatesAutoresizingMaskIntoConstraints = false
@@ -92,10 +92,10 @@ class AuthViewController: UIViewController {
                                           distribution: .fillEqually)
         
         view.addSubview(scrollView)
-        scrollView.addSubview(backgrounbView)
-        backgrounbView.addSubview(textFieldsStackView)
-        backgrounbView.addSubview(loginLable)
-        backgrounbView.addSubview(buttonsStackView)
+        scrollView.addSubview(backgroundView)
+        backgroundView.addSubview(textFieldsStackView)
+        backgroundView.addSubview(loginLabel)
+        backgroundView.addSubview(buttonsStackView)
     }
     
     private func setupDelegate() {
@@ -138,36 +138,35 @@ extension AuthViewController {
             scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
-        
+
         NSLayoutConstraint.activate([
-            backgrounbView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            backgrounbView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
-            backgrounbView.heightAnchor.constraint(equalTo: view.heightAnchor),
-            backgrounbView.widthAnchor.constraint(equalTo: view.widthAnchor)
+            backgroundView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            backgroundView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
+            backgroundView.heightAnchor.constraint(equalTo: view.heightAnchor),
+            backgroundView.widthAnchor.constraint(equalTo: view.widthAnchor)
+        ])
+
+        NSLayoutConstraint.activate([
+            textFieldsStackView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
+            textFieldsStackView.centerYAnchor.constraint(equalTo: backgroundView.centerYAnchor),
+            textFieldsStackView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 20),
+            textFieldsStackView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -20),
         ])
         
         NSLayoutConstraint.activate([
-            textFieldsStackView.centerXAnchor.constraint(equalTo: backgrounbView.centerXAnchor),
-            textFieldsStackView.centerYAnchor.constraint(equalTo: backgrounbView.centerYAnchor),
-            textFieldsStackView.leadingAnchor.constraint(equalTo: backgrounbView.leadingAnchor, constant: 20),
-            textFieldsStackView.trailingAnchor.constraint(equalTo: backgrounbView.trailingAnchor, constant: -20),
+            loginLabel.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
+            loginLabel.bottomAnchor.constraint(equalTo: textFieldsStackView.topAnchor, constant: -30)
         ])
-        
-        NSLayoutConstraint.activate([
-            loginLable.centerXAnchor.constraint(equalTo: backgrounbView.centerXAnchor),
-            loginLable.bottomAnchor.constraint(equalTo: textFieldsStackView.topAnchor, constant: -30)
-        ])
-        
+
         NSLayoutConstraint.activate([
             signUpButton.heightAnchor.constraint(equalToConstant: 40),
             signInButton.heightAnchor.constraint(equalToConstant: 40)
         ])
         
         NSLayoutConstraint.activate([
-            buttonsStackView.leadingAnchor.constraint(equalTo: backgrounbView.leadingAnchor, constant: 20),
-            buttonsStackView.topAnchor.constraint(equalTo: backgrounbView.bottomAnchor, constant: 30),
-            buttonsStackView.trailingAnchor.constraint(equalTo: backgrounbView.trailingAnchor, constant: -20),
+            buttonsStackView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 20),
+            buttonsStackView.topAnchor.constraint(equalTo: textFieldsStackView.bottomAnchor, constant: 30),
+            buttonsStackView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -20),
         ])
-                
     }
 }
