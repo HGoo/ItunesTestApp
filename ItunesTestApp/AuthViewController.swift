@@ -47,7 +47,7 @@ class AuthViewController: UIViewController {
     private let signUpButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        button.setTitle("SignUP", for: .normal)
+        button.setTitle("SignUp", for: .normal)
         button.tintColor = .white
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
@@ -58,7 +58,7 @@ class AuthViewController: UIViewController {
     private let signInButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        button.setTitle("SignIN", for: .normal)
+        button.setTitle("SignIn", for: .normal)
         button.tintColor = .white
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
@@ -86,7 +86,7 @@ class AuthViewController: UIViewController {
                                           spacing: 10,
                                           distribution: .fillProportionally)
 
-        buttonsStackView = UIStackView(arrangedSubviews: [signUpButton, signInButton],
+        buttonsStackView = UIStackView(arrangedSubviews: [signInButton, signUpButton],
                                           axis: .horizontal,
                                           spacing: 10,
                                           distribution: .fillEqually)
