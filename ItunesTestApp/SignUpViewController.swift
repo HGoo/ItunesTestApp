@@ -75,7 +75,7 @@ class SignUpViewController: UIViewController {
         return textField
     }()
     
-    private let phoneValidLable: UILabel = {
+    private let phoneValidLabel: UILabel = {
         let label = UILabel()
         label.text = "Required field"
         label.font = UIFont.systemFont(ofSize: 14)
@@ -120,13 +120,13 @@ class SignUpViewController: UIViewController {
         button.setTitle("SignUP", for: .normal)
         button.tintColor = .white
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+        button.addTarget(SignUpViewController.self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
     private var elementsStackView = UIStackView()
-    private var datePicekr = UIDatePicker()
+    private var datePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,14 +144,14 @@ class SignUpViewController: UIViewController {
                                                            firstNameValidLabel,
                                                            secondNameTextField,
                                                            secondNameValidLabel,
-                                                           datePicekr,
+                                                           datePicker,
                                                            ageValidLabel,
                                                            phoneNumberTextField,
-                                                           phoneValidLable,
-                                                           emailNumberTextField,
+                                                           phoneValidLabel,
+                                                           emailTextField,
                                                            emailValidLabel,
                                                            passwordTextField,
-                                                           phoneValidLable],
+                                                           phoneValidLabel],
                                         axis: .vertical,
                                         spacing: 10,
                                         distribution: .fillProportionally)
@@ -166,18 +166,18 @@ class SignUpViewController: UIViewController {
         firstNameTextField.delegate = self
         secondNameTextField.delegate = self
         phoneNumberTextField.delegate = self
-        emailNumberTextField.delegate = self
+        emailTextField.delegate = self
         passwordTextField.delegate = self
     }
     
     private func setDatePicker() {
-        datePicekr.datePickerMode = .date
-        datePicekr.backgroundColor = .white
-        datePicekr.layer.borderColor = #colorLiteral(red: 0.992223084, green: 1, blue: 0.9489852786, alpha: 1)
-        datePicekr.layer.borderWidth = 1
-        datePicekr.clipsToBounds = true
-        datePicekr.layer.cornerRadius = 6
-        datePicekr.tintColor = .black
+        datePicker.datePickerMode = .date
+        datePicker.backgroundColor = .white
+        datePicker.layer.borderColor = #colorLiteral(red: 0.992223084, green: 1, blue: 0.9489852786, alpha: 1)
+        datePicker.layer.borderWidth = 1
+        datePicker.clipsToBounds = true
+        datePicker.layer.cornerRadius = 6
+        datePicker.tintColor = .black
     }
     
     @objc private func signUpButtonTapped() {
@@ -197,7 +197,7 @@ extension SignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         firstNameTextField.resignFirstResponder()
         secondNameTextField.resignFirstResponder()
-        emailNumberTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         return true
     }
@@ -241,6 +241,7 @@ extension SignUpViewController {
             signUpButton.heightAnchor.constraint(equalToConstant: 40),
             signUpButton.widthAnchor.constraint(equalToConstant: 300)
         ])
+        
         
     }
 }
