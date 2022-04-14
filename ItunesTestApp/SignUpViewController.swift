@@ -23,10 +23,10 @@ class SignUpViewController: UIViewController {
     }()
     
     private let loginLabel: UILabel = {
-        let lable = UILabel()
-        lable.text = "Registration"
-        lable.translatesAutoresizingMaskIntoConstraints = false
-        return lable
+        let label = UILabel()
+        label.text = "Registration"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     private let firstNameTextField: UITextField = {
@@ -36,12 +36,12 @@ class SignUpViewController: UIViewController {
         return textField
     }()
     
-    private let firstNameValidLable: UILabel = {
-        let lable = UILabel()
-        lable.text = "Required field"
-        lable.font = UIFont.systemFont(ofSize: 14)
-        lable.translatesAutoresizingMaskIntoConstraints = false
-        return lable
+    private let firstNameValidLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Required field"
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     private let secondNameTextField: UITextField = {
@@ -51,20 +51,20 @@ class SignUpViewController: UIViewController {
         return textField
     }()
     
-    private let secondNameValidLable: UILabel = {
-        let lable = UILabel()
-        lable.text = "Required field"
-        lable.font = UIFont.systemFont(ofSize: 14)
-        lable.translatesAutoresizingMaskIntoConstraints = false
-        return lable
+    private let secondNameValidLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Required field"
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
-    private let ageValidLable: UILabel = {
-        let lable = UILabel()
-        lable.text = "Required field"
-        lable.font = UIFont.systemFont(ofSize: 14)
-        lable.translatesAutoresizingMaskIntoConstraints = false
-        return lable
+    private let ageValidLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Required field"
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     private let phoneNumberTextField: UITextField = {
@@ -76,11 +76,11 @@ class SignUpViewController: UIViewController {
     }()
     
     private let phoneValidLable: UILabel = {
-        let lable = UILabel()
-        lable.text = "Required field"
-        lable.font = UIFont.systemFont(ofSize: 14)
-        lable.translatesAutoresizingMaskIntoConstraints = false
-        return lable
+        let label = UILabel()
+        label.text = "Required field"
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     private let emailNumberTextField: UITextField = {
@@ -91,28 +91,28 @@ class SignUpViewController: UIViewController {
         return textField
     }()
     
-    private let emailValidLable: UILabel = {
-        let lable = UILabel()
-        lable.text = "Required field"
-        lable.font = UIFont.systemFont(ofSize: 14)
-        lable.translatesAutoresizingMaskIntoConstraints = false
-        return lable
+    private let emailValidLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Required field"
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     private let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
+        textField.isSecureTextEntry = true
         textField.placeholder = "Password"
-        textField.keyboardType = .numberPad
         return textField
     }()
     
-    private let passwordValidLable: UILabel = {
-        let lable = UILabel()
-        lable.text = "Required field"
-        lable.font = UIFont.systemFont(ofSize: 14)
-        lable.translatesAutoresizingMaskIntoConstraints = false
-        return lable
+    private let passwordValidLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Required field"
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     private let signUpButton: UIButton = {
@@ -142,15 +142,15 @@ class SignUpViewController: UIViewController {
         title = "SignUP"
         
         elementsStackView = UIStackView(arrangedSubviews: [firstNameTextField,
-                                                           firstNameValidLable,
+                                                           firstNameValidLabel,
                                                            secondNameTextField,
-                                                           secondNameValidLable,
+                                                           secondNameValidLabel,
                                                            datePicekr,
-                                                           ageValidLable,
+                                                           ageValidLabel,
                                                            phoneNumberTextField,
                                                            phoneValidLable,
                                                            emailNumberTextField,
-                                                           emailValidLable,
+                                                           emailValidLabel,
                                                            passwordTextField,
                                                            phoneValidLable],
                                         axis: .vertical,
