@@ -15,14 +15,14 @@ class SignUpViewController: UIViewController {
         return scrollView
     }()
     
-    private let backgrounbView: UIView = {
+    private let backgroundView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private let loginLable: UILabel = {
+    private let loginLabel: UILabel = {
         let lable = UILabel()
         lable.text = "Registration"
         lable.translatesAutoresizingMaskIntoConstraints = false
@@ -157,10 +157,10 @@ class SignUpViewController: UIViewController {
                                         spacing: 10,
                                         distribution: .fillProportionally)
         view.addSubview(scrollView)
-        view.addSubview(backgrounbView)
-        backgrounbView.addSubview(elementsStackView)
-        backgrounbView.addSubview(loginLable)
-        backgrounbView.addSubview(signUpButton)
+        view.addSubview(backgroundView)
+        backgroundView.addSubview(elementsStackView)
+        backgroundView.addSubview(loginLabel)
+        backgroundView.addSubview(signUpButton)
     }
     
     private func setupDelegate() {
@@ -218,26 +218,26 @@ extension SignUpViewController {
         ])
         
         NSLayoutConstraint.activate([
-            backgrounbView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            backgrounbView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
-            backgrounbView.heightAnchor.constraint(equalTo: view.heightAnchor),
-            backgrounbView.widthAnchor.constraint(equalTo: view.widthAnchor)
+            backgroundView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            backgroundView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
+            backgroundView.heightAnchor.constraint(equalTo: view.heightAnchor),
+            backgroundView.widthAnchor.constraint(equalTo: view.widthAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            elementsStackView.centerXAnchor.constraint(equalTo: backgrounbView.centerXAnchor),
-            elementsStackView.centerYAnchor.constraint(equalTo: backgrounbView.centerYAnchor),
-            elementsStackView.leadingAnchor.constraint(equalTo: backgrounbView.leadingAnchor, constant: 20),
-            elementsStackView.trailingAnchor.constraint(equalTo: backgrounbView.trailingAnchor, constant: -20),
+            elementsStackView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
+            elementsStackView.centerYAnchor.constraint(equalTo: backgroundView.centerYAnchor),
+            elementsStackView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 20),
+            elementsStackView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -20),
         ])
         
         NSLayoutConstraint.activate([
-            loginLable.centerXAnchor.constraint(equalTo: backgrounbView.centerXAnchor),
-            loginLable.bottomAnchor.constraint(equalTo: elementsStackView.topAnchor, constant: -30)
+            loginLabel.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
+            loginLabel.bottomAnchor.constraint(equalTo: elementsStackView.topAnchor, constant: -30)
         ])
         
         NSLayoutConstraint.activate([
-            signUpButton.centerXAnchor.constraint(equalTo: backgrounbView.centerXAnchor),
+            signUpButton.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
             signUpButton.topAnchor.constraint(equalTo: elementsStackView.bottomAnchor, constant: 30),
             signUpButton.heightAnchor.constraint(equalToConstant: 40),
             signUpButton.widthAnchor.constraint(equalToConstant: 300)
