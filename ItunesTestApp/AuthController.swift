@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AuthController.swift
 //  ItunesTestApp
 //
 //  Created by Николай Петров on 14.04.2022.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AuthController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .red
     }
 
 
