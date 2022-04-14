@@ -11,6 +11,10 @@
 		DD870F70280814C3004DDBC7 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD870F6F280814C3004DDBC7 /* AuthController.swift */; };
 		DD870F75280814C4004DDBC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD870F74280814C4004DDBC7 /* Assets.xcassets */; };
 		DD870F78280814C4004DDBC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD870F76280814C4004DDBC7 /* LaunchScreen.storyboard */; };
+		DD870F82280822EC004DDBC7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD870F81280822EC004DDBC7 /* SignUpViewController.swift */; };
+		DD870F86280823CD004DDBC7 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD870F85280823CD004DDBC7 /* AlbumsViewController.swift */; };
+		DD870F8928082930004DDBC7 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD870F8828082930004DDBC7 /* UIStackView + Extensions.swift */; };
+		DD870F8B28083A82004DDBC7 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD870F8A28083A82004DDBC7 /* UIViewController + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		DD870F74280814C4004DDBC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD870F77280814C4004DDBC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD870F79280814C4004DDBC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD870F81280822EC004DDBC7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		DD870F85280823CD004DDBC7 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
+		DD870F8828082930004DDBC7 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
+		DD870F8A28083A82004DDBC7 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				DD870F6A280814C3004DDBC7 /* ItunesTestApp */,
+				DD870F87280828F9004DDBC7 /* Extensions */,
 				DD870F69280814C3004DDBC7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,8 +82,20 @@
 			isa = PBXGroup;
 			children = (
 				DD870F6F280814C3004DDBC7 /* AuthController.swift */,
+				DD870F81280822EC004DDBC7 /* SignUpViewController.swift */,
+				DD870F85280823CD004DDBC7 /* AlbumsViewController.swift */,
 			);
 			name = VievControllers;
+			sourceTree = "<group>";
+		};
+		DD870F87280828F9004DDBC7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DD870F8828082930004DDBC7 /* UIStackView + Extensions.swift */,
+				DD870F8A28083A82004DDBC7 /* UIViewController + Extension.swift */,
+			);
+			name = Extensions;
+			path = ItunesTestApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,8 +168,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD870F8928082930004DDBC7 /* UIStackView + Extensions.swift in Sources */,
+				DD870F82280822EC004DDBC7 /* SignUpViewController.swift in Sources */,
+				DD870F8B28083A82004DDBC7 /* UIViewController + Extension.swift in Sources */,
 				DD870F70280814C3004DDBC7 /* AuthController.swift in Sources */,
 				DD870F6C280814C3004DDBC7 /* AppDelegate.swift in Sources */,
+				DD870F86280823CD004DDBC7 /* AlbumsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
