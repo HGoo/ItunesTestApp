@@ -23,6 +23,10 @@
 		DDA4339D28095DD50071F67A /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4339C28095DD50071F67A /* UserDefaultManager.swift */; };
 		DDA433A028095EC60071F67A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4339F28095EC60071F67A /* UserModel.swift */; };
 		DDA433A22809666F0071F67A /* AlertOk.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA433A12809666F0071F67A /* AlertOk.swift */; };
+		DDA433A428097BCD0071F67A /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA433A328097BCD0071F67A /* AlbumModel.swift */; };
+		DDA433A728097D310071F67A /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA433A628097D310071F67A /* NetworkRequest.swift */; };
+		DDA433A928097EDB0071F67A /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA433A828097EDB0071F67A /* NetworkDataFetch.swift */; };
+		DDA433AB280996E50071F67A /* SongsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA433AA280996E50071F67A /* SongsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		DDA4339C28095DD50071F67A /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		DDA4339F28095EC60071F67A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		DDA433A12809666F0071F67A /* AlertOk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOk.swift; sourceTree = "<group>"; };
+		DDA433A328097BCD0071F67A /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		DDA433A628097D310071F67A /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		DDA433A828097EDB0071F67A /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
+		DDA433AA280996E50071F67A /* SongsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				DD870F6A280814C3004DDBC7 /* ItunesTestApp */,
+				DDA433A528097D100071F67A /* Network */,
 				DDA4339B28095DB50071F67A /* Services */,
 				DD870F87280828F9004DDBC7 /* Extensions */,
 				DD870F69280814C3004DDBC7 /* Products */,
@@ -143,8 +152,20 @@
 			children = (
 				DDA4339F28095EC60071F67A /* UserModel.swift */,
 				DDA433A12809666F0071F67A /* AlertOk.swift */,
+				DDA433A328097BCD0071F67A /* AlbumModel.swift */,
+				DDA433AA280996E50071F67A /* SongsModel.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		DDA433A528097D100071F67A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DDA433A628097D310071F67A /* NetworkRequest.swift */,
+				DDA433A828097EDB0071F67A /* NetworkDataFetch.swift */,
+			);
+			name = Network;
+			path = ItunesTestApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +239,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDA433962808498B0071F67A /* DetailAlbumViewController.swift in Sources */,
+				DDA433A428097BCD0071F67A /* AlbumModel.swift in Sources */,
+				DDA433A728097D310071F67A /* NetworkRequest.swift in Sources */,
 				DD870F8928082930004DDBC7 /* UIStackView + Extensions.swift in Sources */,
 				DDA43391280847A80071F67A /* UserInfoViewController.swift in Sources */,
 				DDA43398280852CA0071F67A /* SongsCollectionViewCell.swift in Sources */,
@@ -229,6 +252,8 @@
 				DD870F8B28083A82004DDBC7 /* UIViewController + Extension.swift in Sources */,
 				DDA4339A280881400071F67A /* String + Extension.swift in Sources */,
 				DD870F70280814C3004DDBC7 /* AuthViewController.swift in Sources */,
+				DDA433AB280996E50071F67A /* SongsModel.swift in Sources */,
+				DDA433A928097EDB0071F67A /* NetworkDataFetch.swift in Sources */,
 				DD870F6C280814C3004DDBC7 /* AppDelegate.swift in Sources */,
 				DD870F86280823CD004DDBC7 /* AlbumsViewController.swift in Sources */,
 			);

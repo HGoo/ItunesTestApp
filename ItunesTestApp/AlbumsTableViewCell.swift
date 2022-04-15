@@ -17,7 +17,7 @@ class AlbumsTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    private let albumNameLable: UILabel = {
+    private let albumNameLabel: UILabel = {
         let lable = UILabel()
         lable.text = "Name album name"
         lable.font = UIFont.systemFont(ofSize: 20)
@@ -65,35 +65,60 @@ class AlbumsTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
         self.addSubview(albumLogo)
-        self.addSubview(albumNameLable)
+        self.addSubview(albumNameLabel)
         
-        stackView = UIStackView(arrangedSubviews: [albumNameLable, trackCountNameLable],
+        stackView = UIStackView(arrangedSubviews: [albumNameLabel, trackCountNameLable],
                                 axis: .horizontal,
                                 spacing: 10,
                                 distribution: .equalSpacing)
         self.addSubview(stackView)
     }
     
+    func configureAlbumCell(album: Album) {
+        
+        if let urlstring = album.artworkUrl100 {
+            NetworkRequest.shared.requestData(urlString: urlstring) { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success(let data):
+                    let image = UIImage(data: data)
+                    self.albumLogo.image = image
+                case .failure(let error):
+                    self.albumLogo.image = nil
+                    print("No almbom logo", error.localizedDescription)
+                }
+            }
+        } else {
+            self.albumLogo.image = nil
+        }
+        
+        albumNameLabel.text = album.collectionName
+        artistNameLable.text = album.artistName
+        trackCountNameLable.text = "\(album.trackCount) tracks"
+    }
+    
     private func setConstraints() {
         
         NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
-            stackView.heightAnchor.constraint(equalToConstant: 60),
-            stackView.widthAnchor.constraint(equalToConstant: 60)
+            albumLogo.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            albumLogo.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
+            albumLogo.heightAnchor.constraint(equalToConstant: 60),
+            albumLogo.widthAnchor.constraint(equalToConstant: 60)
         ])
         
         NSLayoutConstraint.activate([
-            albumNameLable.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            albumNameLable.leadingAnchor.constraint(equalTo: albumLogo.trailingAnchor, constant: 10),
-            albumNameLable.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
+            albumNameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            albumNameLabel.leadingAnchor.constraint(equalTo: albumLogo.trailingAnchor, constant: 10),
+            albumNameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
         ])
-        
+
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: albumLogo.bottomAnchor, constant: 10),
             stackView.leadingAnchor.constraint(equalTo: albumLogo.trailingAnchor, constant: 10),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
         ])
+
+      
     }
 }
 

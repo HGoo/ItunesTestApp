@@ -40,7 +40,7 @@ class DetailAlbumViewController: UIViewController {
     
     private let trackCountLable: UILabel = {
         let lable = UILabel()
-        lable.text = "10 tracks"
+        lable.text = "Tracks"
         lable.font = UIFont.systemFont(ofSize: 16)
         lable.translatesAutoresizingMaskIntoConstraints = false
         return lable
@@ -59,12 +59,17 @@ class DetailAlbumViewController: UIViewController {
     
     private var stackView = UIStackView()
     
+    var album: Album?
+    var songs = [Song]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
         setupDelegate()
         setConstraints()
+        setModel()
+        fetchSongs(album: album)
     }
     
     private func setupViews() {
@@ -86,6 +91,76 @@ class DetailAlbumViewController: UIViewController {
         collectionview.delegate = self
         collectionview.dataSource = self
     }
+    
+    private func setModel() {
+        
+        guard let album = album else { return }
+        
+        albumNameLable.text = album.collectionName
+        artistNameLable.text = album.artistName
+        trackCountLable.text = "\(album.trackCount) tracks:"
+        releaseDateLable.text = setDateFormate(date: album.releaseDate)
+        
+        guard let url = album.artworkUrl100 else { return }
+        
+        
+        setImage(urlString: url)
+        
+    }
+    
+    private func setDateFormate(date: String) -> String {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZ'"
+        
+        guard let backendDate = dateFormatter.date(from: date) else { return "" }
+        
+        let formateDate = DateFormatter()
+        formateDate.dateFormat = "dd-MM-yyyy"
+        let data = formateDate.string(from: backendDate)
+        
+        return data
+    }
+    
+    private func setImage(urlString: String?) {
+        
+        if let url = urlString {
+            NetworkRequest.shared.requestData(urlString: url ) { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success(let data):
+                    let image = UIImage(data: data)
+                    self.albumLogo.image = image
+                case .failure(let error):
+                    self.albumLogo.image = nil
+                    print("No almbom logo", error.localizedDescription)
+                }
+            }
+        } else {
+            albumLogo.image = nil
+        }
+    }
+    
+    private func fetchSongs(album: Album?) {
+        
+        guard let album = album else { return }
+        let idAlbum = album.collectionId
+        let urlString = "https://itunes.apple.com/lookup?id=\(idAlbum)&entity=song"
+        
+        NetworkDataFetch.shared.fetchSongs(urlString: urlString) { [weak self] songsModel, error in
+            guard let self = self else { return }
+            
+            if error == nil {
+                guard let songsModel = songsModel else { return }
+                self.songs = songsModel.results
+                self.collectionview.reloadData()
+            } else {
+                print(error!.localizedDescription)
+                self.alertOk(titel: "Error", message: error!.localizedDescription)
+            }
+        }
+    }
+    
 }
 
 //MARK: - UITableViewDelegate
@@ -93,12 +168,14 @@ class DetailAlbumViewController: UIViewController {
 extension DetailAlbumViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        songs.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SongsCollectionViewCell
-        cell.nameSongLable.text = "Name Song"
+        
+        let song = songs[indexPath.row]
+        cell.nameSongLable.text = song.trackName
         return cell
     }
         
