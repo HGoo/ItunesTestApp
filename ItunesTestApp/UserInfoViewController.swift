@@ -9,7 +9,7 @@ import UIKit
 
 class UserInfoViewController: UIViewController {
     
-    private let firstNameTextField: UILabel = {
+    private let firstNameLabel: UILabel = {
         let lable = UILabel()
         lable.text = "First Name"
         lable.translatesAutoresizingMaskIntoConstraints = false
@@ -66,13 +66,14 @@ class UserInfoViewController: UIViewController {
         
         setupViews()
         setConstraints()
+        setModel()
     }
     
     private func setupViews() {
         title = "Active User"
         view.backgroundColor = .white
         
-        stackView = UIStackView(arrangedSubviews: [firstNameTextField,
+        stackView = UIStackView(arrangedSubviews: [firstNameLabel,
                                                   secondNameLable,
                                                   ageLable,
                                                   phoneLable,
@@ -82,6 +83,21 @@ class UserInfoViewController: UIViewController {
                                 spacing: 10,
                                 distribution: .fillProportionally)
         view.addSubview(stackView)
+    }
+    
+    private func  setModel() {
+        guard let activeUser = DataBase.shared.activeUser else { return }
+        
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "dd.MM.yyyy"
+        let dateString = dateFormater.string(from: activeUser.age)
+        
+        firstNameLabel.text = activeUser.firstName
+        secondNameLable.text = activeUser.secondName
+        phoneLable.text = activeUser.phone
+        emailLable.text = activeUser.email
+        passwordLable.text = activeUser.password
+        ageLable.text = dateString
     }
 }
 

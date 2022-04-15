@@ -19,6 +19,10 @@
 		DDA43394280849110071F67A /* AlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA43393280849110071F67A /* AlbumsTableViewCell.swift */; };
 		DDA433962808498B0071F67A /* DetailAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA433952808498B0071F67A /* DetailAlbumViewController.swift */; };
 		DDA43398280852CA0071F67A /* SongsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA43397280852CA0071F67A /* SongsCollectionViewCell.swift */; };
+		DDA4339A280881400071F67A /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA43399280881400071F67A /* String + Extension.swift */; };
+		DDA4339D28095DD50071F67A /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4339C28095DD50071F67A /* UserDefaultManager.swift */; };
+		DDA433A028095EC60071F67A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4339F28095EC60071F67A /* UserModel.swift */; };
+		DDA433A22809666F0071F67A /* AlertOk.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA433A12809666F0071F67A /* AlertOk.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		DDA43393280849110071F67A /* AlbumsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewCell.swift; sourceTree = "<group>"; };
 		DDA433952808498B0071F67A /* DetailAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAlbumViewController.swift; sourceTree = "<group>"; };
 		DDA43397280852CA0071F67A /* SongsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCollectionViewCell.swift; sourceTree = "<group>"; };
+		DDA43399280881400071F67A /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
+		DDA4339C28095DD50071F67A /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		DDA4339F28095EC60071F67A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		DDA433A12809666F0071F67A /* AlertOk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOk.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				DD870F6A280814C3004DDBC7 /* ItunesTestApp */,
+				DDA4339B28095DB50071F67A /* Services */,
 				DD870F87280828F9004DDBC7 /* Extensions */,
 				DD870F69280814C3004DDBC7 /* Products */,
 			);
@@ -70,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				DD870F7F2808177B004DDBC7 /* Source */,
+				DDA4339E28095EA80071F67A /* Models */,
 				DD870F8028081798004DDBC7 /* VievControllers */,
 			);
 			path = ItunesTestApp;
@@ -104,6 +114,7 @@
 			children = (
 				DD870F8828082930004DDBC7 /* UIStackView + Extensions.swift */,
 				DD870F8A28083A82004DDBC7 /* UIViewController + Extension.swift */,
+				DDA43399280881400071F67A /* String + Extension.swift */,
 			);
 			name = Extensions;
 			path = ItunesTestApp;
@@ -116,6 +127,24 @@
 				DDA43397280852CA0071F67A /* SongsCollectionViewCell.swift */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		DDA4339B28095DB50071F67A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DDA4339C28095DD50071F67A /* UserDefaultManager.swift */,
+			);
+			name = Services;
+			path = ItunesTestApp;
+			sourceTree = "<group>";
+		};
+		DDA4339E28095EA80071F67A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DDA4339F28095EC60071F67A /* UserModel.swift */,
+				DDA433A12809666F0071F67A /* AlertOk.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,8 +222,12 @@
 				DDA43391280847A80071F67A /* UserInfoViewController.swift in Sources */,
 				DDA43398280852CA0071F67A /* SongsCollectionViewCell.swift in Sources */,
 				DD870F82280822EC004DDBC7 /* SignUpViewController.swift in Sources */,
+				DDA433A028095EC60071F67A /* UserModel.swift in Sources */,
+				DDA433A22809666F0071F67A /* AlertOk.swift in Sources */,
 				DDA43394280849110071F67A /* AlbumsTableViewCell.swift in Sources */,
+				DDA4339D28095DD50071F67A /* UserDefaultManager.swift in Sources */,
 				DD870F8B28083A82004DDBC7 /* UIViewController + Extension.swift in Sources */,
+				DDA4339A280881400071F67A /* String + Extension.swift in Sources */,
 				DD870F70280814C3004DDBC7 /* AuthViewController.swift in Sources */,
 				DD870F6C280814C3004DDBC7 /* AppDelegate.swift in Sources */,
 				DD870F86280823CD004DDBC7 /* AlbumsViewController.swift in Sources */,
